@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>jQuery价格日历控件 - 显示价格日历、修改价格日历</title>
+    <link href="../riLi/css/datepicker.css" rel="stylesheet"/>
+    <script src="../riLi/js/jquery-3.2.1.min.js"></script>
+    <script src="../riLi/js/zlDate.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0px;
+        }
+
+        .calendar_btn {
+            margin-top: 10px;
+            padding: 0px 5px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div style="margin: 50px">
+    <input style="width: 124px" location="right" class="calendar_btn" name="calendar" readonly="readonly"
+           onclick="showCalendar(this,'232');" placeholder="酒店价格日历1"/>
+</div>
+<div style="margin: 50px">
+    <input style="width: 124px" location="right" class="calendar_btn" name="calendar" readonly="readonly"
+           onclick="showCalendar(this,'233');" placeholder="酒店价格日历2"/>
+</div>
+<script>
+    var hotelId = null;//酒店ID
+    /**
+     * 显示价格日历
+     * @param e 按钮元素对象
+     * @param id 资源ID（酒店ID）
+     */
+    function showCalendar(e, id) {
+        hotelId = id; // 根据自己的业务逻辑可以适当调整
+       // 接口获取价格日历数据【接入项目是请使用这里的代码】
+       // $.get('data.json?hotel_id=' + hotelId, function (data) {
+       //
+       //     console.log(data);
+       //     pickerEvent.setPriceArr(data);// 设置数据
+       //     pickerEvent.Init(e);// 开始初始化组件
+       // });
+
+        $.get('../login/queryTestRiLi?null', function (data) {
+            console.log(data);
+            pickerEvent.setPriceArr(data);// 设置数据
+            pickerEvent.Init(e);// 开始初始化组件
+        });
+
+
+    }
+
+    /**
+     * 修改价格
+     * @param date
+     * @param newPrice
+     * @param calendarPrice
+    //  */
+    // function changePrice(date, newPrice, calendarPrice) {
+    //     alert('修改价格' + date + "天的价格为" + newPrice);
+
+//        // 接口修改价格日历数据【接入项目是请使用这里的代码】
+//        var params = {
+//            hotelId: hotelId,
+//            date: date,
+//            price: newPrice
+//        };
+//        $.post('change.json?hotel_id=' + hotelId, params, function (data, status) {
+//
+//            if (data.code == 100) {
+//                calendarPrice.show();
+//            } else {
+//                alert("修改失败！");
+//            }
+//        });
+
+        // 这里为了演示，我直接模拟成功，接入项目时请使用上面ajax请求接口动态修改数据
+    //     calendarPrice.show();
+    // }
+</script>
+</body>
+</html>

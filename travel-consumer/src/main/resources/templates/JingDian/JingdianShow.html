@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>景点详情</title>
+
+    <link rel="stylesheet" type="text/css" href="../stylee/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../stylee/css/route-detail.css">
+    <script type="text/javascript" src="../stylee/js/include.js"></script>
+
+    <!-- 引入jquery -->
+    <script type="text/javascript" src="../js3/jquery-1.9.1.min.js"></script>
+    <!-- 引入bootstrap的css、js -->
+    <script type="text/javascript" src="../js3/bootstrap3/js/bootstrap.js"></script>
+    <!-- 引入tree的js、css -->
+    <link rel="stylesheet" href="../js3/bootstrap-treeview/bootstrap-treeview.min.css">
+    <script type="text/javascript" src="../js3/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <!-- 引入选项卡的js、css -->
+    <link rel="stylesheet" href="../js3/bootStrap-addTabs/bootstrap.addtabs.css">
+    <script type="text/javascript" src="../js3/bootStrap-addTabs/bootstrap.addtabs.min.js"></script>
+    <!-- 引入table的css、js -->
+    <link rel="stylesheet" href="../js3/bootstrap-table/bootstrap-table.css">
+    <script type="text/javascript" src="../js3/bootstrap-table/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../js3/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <!-- 引入删除提示框 -->
+    <script type="text/javascript" src="../js3/bootbox/bootbox.min.js"></script>
+    <!-- 引入时间的css、js -->
+    <link rel="stylesheet" href="../js3/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+    <script  src="../js3/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script  src="../js3/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <!-- 引入文件上传的css、js -->
+    <link rel="stylesheet" href="../js3/bootstrap-fileinput/css/fileinput.css">
+    <script type="text/javascript" src="../js3/bootstrap-fileinput/js/fileinput.js"></script>
+    <script type="text/javascript" src="../js3/bootstrap-fileinput/js/locales/zh.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <nav class="navbar navbar-default" role="navigation">
+        <div class="col-md-3 column">
+            <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 35px;" th:text="${j.jdName}">
+             </span>
+            <br>
+            <span th:text="${j.jdEnglish}"></span>
+        </div>
+        </nav>
+    </div>
+</div>
+
+<br>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+            <div class="content">
+                <div class="texts">
+                    <p style="margin-top: 0px; margin-bottom: 0px; font-size: 12px; white-space: normal; padding: 0px; border: none; word-break: break-all; word-wrap: break-word; color: rgb(102, 102, 102); font-family: Tahoma, Geneva, sans-serif, 宋体; background-color: rgb(255, 255, 255);">
+                        <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;">
+                        <strong>
+                            <span style="color: rgb(255, 0, 0);">门票价格：
+                            </span>
+                        </strong>
+                    </span>
+                    </p>
+                    旺季：<span style="margin-top: 0px; margin-bottom: 0px; font-size: 12px; white-space: normal; padding: 0px; border: none; word-break: break-all; word-wrap: break-word; color: rgb(102, 102, 102); font-family: Tahoma, Geneva, sans-serif, 宋体; background-color: rgb(255, 255, 255);" th:text="${j.jdpriceWang}"></span>元/人<br>
+                    淡季： <span style="margin-top: 0px; margin-bottom: 0px; font-size: 12px; white-space: normal; padding: 0px; border: none; word-break: break-all; word-wrap: break-word; color: rgb(102, 102, 102); font-family: Tahoma, Geneva, sans-serif, 宋体; background-color: rgb(255, 255, 255);" th:text="${j.jdPrice}"></span>元/人
+                    <p style="font-size: 12px; white-space: normal;">
+                        <span style="font-family: 宋体, SimSun; color: rgb(165, 165, 165);">交通：距离成都400多公里</span>
+                    </p><hr style="font-size: 12px; white-space: normal;"/>
+                    <p style="font-size: 12px; white-space: normal;">
+                        <span style="font-family: 宋体, SimSun;"></span>
+                    </p>
+                    <p style="font-size: 12px; white-space: normal;">
+                       旅行亮点： <span style="color: rgb(247, 150, 70); font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;" >hjk</span>
+<!--                        <span th:text="{j.jdTeShe}"></span>-->
+                        <!--                       <span th:text="{j.jdTeShe}"></span>-->
+                    </p>
+                    <p style="font-size: 12px; white-space: normal;">
+                        <span style="font-family: 宋体, SimSun;" ></span>
+<!--                        th:text="{j.jdTeShe}"-->
+                    </p>
+                    <p style="font-size: 12px; white-space: normal;"><span style="font-family: 宋体, SimSun;"></span></p>
+                    <hr style="font-size: 12px; white-space: normal;"/>
+                    <p style="font-size: 12px; white-space: normal;">
+                        <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px; color: rgb(247, 150, 70);">旅游简介：</span>
+                    </p>
+                    <p style="font-size: 12px; white-space: normal;">
+                        <span style="font-family: 宋体, SimSun;" th:text="${j.jdInfo}">&nbsp; &nbsp;</span>
+                        <br/>
+                        <span style="font-family: 宋体, SimSun;"></span>
+                    </p>
+                    <p style="font-size: 12px; white-space: normal;">
+                        <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px; color: rgb(247, 150, 70);">最佳季节：
+                        </span>
+                    </p>
+                    <p style="font-size: 12px; white-space: normal;">
+                        <span style="font-family: 宋体, SimSun;">&nbsp; &nbsp; 9月-10月最佳。 深秋11月是九寨沟最为灿烂的时期，清空湛碧，红叶、彩林倒映在明丽的湖水中绚丽多彩。但这一时期是旺季，恰遇国庆假日，游人很多，建议避开放假。
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col-md-8 column">
+            <br>
+            <div class="prosum_box">
+                <dl class="prosum_left">
+                    <dt>
+                        <img alt="" class="big_img" src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m49788843d72171643297ccc033d9288ee.jpg">
+                    </dt>
+                    <dd>
+                        <a class="up_img up_img_disable"></a>
+                        <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m40920d0669855e745d97f9ad1df966ebb.jpg">
+                            <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m20920d0669855e745d97f9ad1df966ebb.jpg">
+                        </a>
+                        <a title="" class="little_img cur_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m49788843d72171643297ccc033d9288ee.jpg">
+                            <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m29788843d72171643297ccc033d9288ee.jpg">
+                        </a>
+                        <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m4531a8dbceefa2c44e6d0e35627cd2689.jpg">
+                            <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m2531a8dbceefa2c44e6d0e35627cd2689.jpg">
+                        </a>
+                        <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m46d8cb900e9f6c0a762aca19eae40c00c.jpg">
+                            <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m26d8cb900e9f6c0a762aca19eae40c00c.jpg">
+                        </a>
+                        <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m45ea00f6eba562a767b5095bbf8cffe07.jpg" style="display:none;">
+                            <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m25ea00f6eba562a767b5095bbf8cffe07.jpg">
+                        </a>
+                        <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m4265ec488cd1bc7ce749bc8c9b34b87bc.jpg" style="display:none;">
+                            <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m2265ec488cd1bc7ce749bc8c9b34b87bc.jpg">
+                        </a>
+                        <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m4e7e964909d7dd1a9f6e5494d4dc0c847.jpg" style="display:none;">
+                            <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m2e7e964909d7dd1a9f6e5494d4dc0c847.jpg">
+                        </a>
+                        <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m467db00e1b76718fab0fe8b96e10f4d35.jpg" style="display:none;">
+                            <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m267db00e1b76718fab0fe8b96e10f4d35.jpg">
+                        </a>
+                        <a title="" class="little_img" data-bigpic="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m487bbbc6e43eba6aa6a36cc1a182f7a20.jpg" style="display:none;">
+                            <img src="http://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m287bbbc6e43eba6aa6a36cc1a182f7a20.jpg">
+                        </a>
+                        <a class="down_img down_img_disable" style="margin-bottom: 0;"></a>
+                    </dd>
+                </dl>
+                <!--        <div class="prosum_right">-->
+                <!--            <p class="pros_title">【尾单特卖】全国-曼谷6-7天自由行 泰国出境旅游 特价往返机票自由行二次确认</p>-->
+                <!--            <p class="hot">1-2月出发，网付立享￥1099/2人起！爆款位置有限，抢完即止！</p>-->
+                <!--            <div class="pros_other">-->
+                <!--                <p>经营商家  ：黑马国旅</p>-->
+                <!--                <p>咨询电话 : 400-618-9090</p>-->
+                <!--                <p>地址 ： 传智播客黑马程序员</p>-->
+                <!--            </div>-->
+                <!--            <div class="pros_price">-->
+                <!--                <p class="price"><strong>¥2699.00</strong><span>起</span></p>-->
+                <!--                <p class="collect">-->
+                <!--                    <a class="btn"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>-->
+
+                <!--                    <a  class="btn already" disabled="disabled"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>-->
+                <!--                    <span>已收藏100次</span>-->
+                <!--                </p>-->
+                <!--            </div>-->
+                <!--        </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="you_need_konw">
+    <span>旅游须知</span>
+    <div class="notice">
+        <p>1、旅行社已投保旅行社责任险。建议游客购买旅游意外保险 <br>
+
+        <p>2、旅游者参加打猎、潜水、海边游泳、漂流、滑水、滑雪、滑草、蹦极、跳伞、滑翔、乘热气球、骑马、赛车、攀岩、水疗、水上飞机等属于高风险性游乐项目的，敬请旅游者务必在参加前充分了解项目的安全须知并确保身体状况能适应此类活动；如旅游者不具备较好的身体条件及技能，可能会造成身体伤害。</p>
+
+        <p>3、参加出海活动时，请务必穿着救生设备。参加水上活动应注意自己的身体状况，有心脏病、冠心病、高血压、感冒、发烧和饮酒及餐后不可以参加水上活动及潜水。在海里活动时，严禁触摸海洋中各种鱼类，水母，海胆，珊瑚等海洋生物，避免被其蛰伤。老人和小孩必须有成年人陪同才能参加合适的水上活动。在海边游玩时，注意保管好随身携带的贵重物品。</p>
+
+        <p>4、根据中国海关总署的规定，旅客在境外购买的物品，在进入中国海关时可能需要征收关税。详细内容见《中华人民共和国海关总署公告2010年第54号文件》。</p>
+
+        <p>5、建议出发时行李托运，贵重物品、常用物品、常用药品、御寒衣物等请随身携带，尽量不要托运。行李延误属于不可抗力因素，我司将全力协助客人跟进后续工作，但我司对此不承担任何责任。</p>
+        <p>1、旅行社已投保旅行社责任险。建议游客购买旅游意外保险 <br>
+
+        <p>2、旅游者参加打猎、潜水、海边游泳、漂流、滑水、滑雪、滑草、蹦极、跳伞、滑翔、乘热气球、骑马、赛车、攀岩、水疗、水上飞机等属于高风险性游乐项目的，敬请旅游者务必在参加前充分了解项目的安全须知并确保身体状况能适应此类活动；如旅游者不具备较好的身体条件及技能，可能会造成身体伤害。</p>
+
+        <p>3、参加出海活动时，请务必穿着救生设备。参加水上活动应注意自己的身体状况，有心脏病、冠心病、高血压、感冒、发烧和饮酒及餐后不可以参加水上活动及潜水。在海里活动时，严禁触摸海洋中各种鱼类，水母，海胆，珊瑚等海洋生物，避免被其蛰伤。老人和小孩必须有成年人陪同才能参加合适的水上活动。在海边游玩时，注意保管好随身携带的贵重物品。</p>
+
+        <p>4、根据中国海关总署的规定，旅客在境外购买的物品，在进入中国海关时可能需要征收关税。详细内容见《中华人民共和国海关总署公告2010年第54号文件》。</p>
+
+        <p>5、建议出发时行李托运，贵重物品、常用物品、常用药品、御寒衣物等请随身携带，尽量不要托运。行李延误属于不可抗力因素，我司将全力协助客人跟进后续工作，但我司对此不承担任何责任。</p>
+    </div>
+</div>
+
+
+</body>
+
+<script>
+    $(document).ready(function() {
+        //焦点图效果
+        //点击图片切换图片
+        $('.little_img').on('mousemove', function() {
+            $('.little_img').removeClass('cur_img');
+            var big_pic = $(this).data('bigpic');
+            $('.big_img').attr('src', big_pic);
+            $(this).addClass('cur_img');
+        });
+        //上下切换
+        var picindex = 0;
+        var nextindex = 4;
+        $('.down_img').on('click',function(){
+            var num = $('.little_img').length;
+            if((nextindex + 1) <= num){
+                $('.little_img:eq('+picindex+')').hide();
+                $('.little_img:eq('+nextindex+')').show();
+                picindex = picindex + 1;
+                nextindex = nextindex + 1;
+            }
+        });
+        $('.up_img').on('click',function(){
+            var num = $('.little_img').length;
+            if(picindex > 0){
+                $('.little_img:eq('+(nextindex-1)+')').hide();
+                $('.little_img:eq('+(picindex-1)+')').show();
+                picindex = picindex - 1;
+                nextindex = nextindex - 1;
+            }
+        });
+        //自动播放
+        // var timer = setInterval("auto_play()", 5000);
+    });
+
+    //自动轮播方法
+    function auto_play() {
+        var cur_index = $('.prosum_left dd').find('a.cur_img').index();
+        cur_index = cur_index - 1;
+        var num = $('.little_img').length;
+        var max_index = 3;
+        if ((num - 1) < 3) {
+            max_index = num - 1;
+        }
+        if (cur_index < max_index) {
+            var next_index = cur_index + 1;
+            var big_pic = $('.little_img:eq(' + next_index + ')').data('bigpic');
+            $('.little_img').removeClass('cur_img');
+            $('.little_img:eq(' + next_index + ')').addClass('cur_img');
+            $('.big_img').attr('src', big_pic);
+        } else {
+            var big_pic = $('.little_img:eq(0)').data('bigpic');
+            $('.little_img').removeClass('cur_img');
+            $('.little_img:eq(0)').addClass('cur_img');
+            $('.big_img').attr('src', big_pic);
+        }
+    }
+</script>
+</html>

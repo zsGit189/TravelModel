@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<title>注册界面</title>
+		<link rel="stylesheet" href="../js/login/css/reset.css" />
+		<link rel="stylesheet" href="../js/login/css/common.css" />
+		<link rel="stylesheet" href="../js/login/css/font-awesome.min.css" />
+
+
+
+	<!-- 引入jquery -->
+	<script type="text/javascript" src="../js3/jquery-1.9.1.min.js"></script>
+	<!-- 引入bootstrap的css、js -->
+	<link rel="stylesheet" href="../js3/bootstrap3/css/bootstrap.css">
+	<script type="text/javascript" src="../js3/bootstrap3/js/bootstrap.js"></script>
+	<!-- 引入tree的js、css -->
+	<link rel="stylesheet" href="../js3/bootstrap-treeview/bootstrap-treeview.min.css">
+	<script type="text/javascript" src="../js3/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+	<!-- 引入选项卡的js、css -->
+	<link rel="stylesheet" href="../js3/bootStrap-addTabs/bootstrap.addtabs.css">
+	<script type="text/javascript" src="../js3/bootStrap-addTabs/bootstrap.addtabs.min.js"></script>
+	<!-- 引入table的css、js -->
+	<link rel="stylesheet" href="../js3/bootstrap-table/bootstrap-table.css">
+	<script type="text/javascript" src="../js3/bootstrap-table/bootstrap-table.js"></script>
+	<script type="text/javascript" src="../js3/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+	<!-- 引入删除提示框 -->
+	<script type="text/javascript" src="../js3/bootbox/bootbox.min.js"></script>
+	<!-- 引入时间的css、js -->
+	<link rel="stylesheet" href="../js3/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+	<script  src="../js3/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+	<script  src="../js3/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+	<!-- 引入文件上传的css、js -->
+	<link rel="stylesheet" href="../js3/bootstrap-fileinput/css/fileinput.css">
+	<script type="text/javascript" src="../js3/bootstrap-fileinput/js/fileinput.js"></script>
+	<script type="text/javascript" src="../js3/bootstrap-fileinput/js/locales/zh.js"></script>
+
+</head>
+	<body>
+		<div class="wrap login_wrap">
+			<div class="content">
+				
+				<div class="logo"></div>
+				
+				<div class="login_box">	
+					
+					<div class="login_form">
+						<div class="login_title">
+							注册
+						</div>
+						<form id="userForm" method="post">
+							<div class="form_text_ipt">
+								<input name="userName" id="userName" type="text" placeholder="昵称" onblur="testNiChen()">
+								<span id="span1"></span>
+							</div>
+							<div class="ececk_warning"><span>昵称不能为空</span></div>
+
+
+							<div class="form_text_ipt">
+								<input name="userAccount" type="text" placeholder="手机号" id="userAccount" onblur="testPhone()">
+								<span id="span2"></span>
+
+							</div>
+							<div class="ececk_warning"><span>手机号</span></div>
+
+							<div class="form_text_ipt">
+								<input name="userCode" type="text" placeholder="手机验证码">
+								<a href="javascript:gainCode()">获取验证码</a>
+							</div>
+							<div class="ececk_warning"><span>手机验证码不能为空</span></div>
+
+							<div class="form_text_ipt">
+								<input name="userPass" id="userPass" type="password" placeholder="密码">
+							</div>
+							<div class="ececk_warning"><span>密码不能为空</span></div>
+							<div class="form_text_ipt">
+								<input id="repassword" type="password" placeholder="重复密码">
+							</div>
+							<div class="ececk_warning"><span>确认密码不能为空</span></div>
+							<div class="form_text_ipt">
+								<input name="usermailbox" id="usermailbox" type="text" placeholder="邮箱" onblur="testEmail()">
+							</div>
+							<div class="ececk_warning"><span>邮箱不能为空</span></div>
+							<span id="span3"></span>
+
+
+<!--							<div class="row">-->
+<!--								&lt;!&ndash;form_text_ipt&ndash;&gt;-->
+<!--								<div class="col-md-3" style="margin-left: 30px;margin-top: 20px">-->
+
+<!--									<input style="display:none" id="testimg" name="userImg" />-->
+<!--									<input type="file"  class="projectfile"  name="imgg" id="headImg"><br>-->
+<!--								</div>-->
+<!--								<div class="col-md-3"></div>-->
+
+<!--							</div>-->
+							<div class="row">
+								<div class="col-md-12" style="margin-left: 30px;margin-top: 20px">
+																																				&nbsp;&nbsp;			&nbsp;&nbsp;		&nbsp;&nbsp;	&nbsp;	<span >注册视为同意<a href="http://www.mafengwo.cn/s/agreement.html">《我的旅游强行规定协议》</a></span>
+								</div>
+
+							</div>
+
+							<div class="form_btn">
+								<button type="button" onclick="javascript:zhuce()">注册</button>
+							</div>
+							<div class="form_reg_btn">
+								<span>已有帐号？</span><a href="../login/toIndex">马上登录</a>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!--		<script type="text/javascript" src="../js/login/js/common.js" ></script>-->
+		<div style="text-align:center;">
+</div>
+	</body>
+<script>
+
+	//注册
+	zhuce = function (){
+
+		var pas1 = $("#userPass").val();
+		var pas2 = $("#repassword").val();
+		if(pas1 != pas2){
+			alert("两次密不一次")
+			return ;
+		}
+		$.ajax({
+			url:'../login/zhuce',
+			type:'put',
+			data:$("#userForm").serialize(),
+			success: function (asdl) {
+
+				alert("test")
+				alert(asdl);
+			},
+			errer:function (data) {
+				alert(data+"er");
+			}
+		})
+
+	}
+
+
+	testNiChen = function (){
+		var nc = $("#userName").val();
+		var reg = /[\u4e00-\u9fa5]{1,}/;
+		if (reg.test(nc)){
+			$("#span1").html(" ");
+			return true;
+		}else{
+			$("#span1").html("<font color='red'>只能是中文</font>");
+			return false;
+		}
+
+	}
+	testPhone = function (){
+		var ph = $("#userAccount").val();
+		var reg = /^[1][\d]{10}$/;
+		if (reg.test(ph)) {
+			$("#span2").html(" ");
+			return true;
+		}else{
+			$("#span2").html("<font color='red'>中国格式手机号</font>");
+			return false;
+		}
+	}
+
+	testEmail = function (){
+		var em = $("#usermailbox").val();
+		var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+		if (reg.test(em)) {
+			$("#span3").html(" ");
+			return true;
+		}else{
+			$("#span3").html("<font color='red'>邮箱格式不正确</font>");
+			return false;
+		}
+
+	}
+
+
+	//获取验证码
+	gainCode  = function (){
+		var pg = $("#userAccount").val();
+		if (pg == null || pg == ""){
+			alert("请先输入手机号");
+			return ;
+		}
+		$.ajax({
+			url:"../login/gainCodeMsg",
+			type:"get",
+			data:{"userAccount":$("#userAccount").val()},
+			success:function(data){
+				alert(data);
+			}
+		})
+	}
+</script>
+
+
+
+
+<script>
+	$(function () {
+		uploadImg();
+	})
+	function uploadImg(url){
+		$('#headImg').fileinput({
+			language: 'zh', //设置语言
+			uploadUrl: '../login/updaloadImg', //上传的地址
+			allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
+			showUpload: true, //是否显示上传按钮
+			showCaption: false,//是否显示标题
+			browseClass: "btn btn-primary", //按钮样式
+			dropZoneEnabled: false,//是否显示拖拽区域
+			//minImageWidth: 50, //图片的最小宽度
+			//minImageHeight: 50,//图片的最小高度
+			//maxImageWidth: 1000,//图片的最大宽度
+			//maxImageHeight: 1000,//图片的最大高度
+			//maxFileSize: 0,//单位为kb，如果为0表示不限制文件大小
+			//minFileCount: 0,
+			maxFileCount: 2, //表示允许同时上传的最大文件个数
+			enctype: 'multipart/form-data',
+			validateInitialCount:true,
+			previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+			msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+
+		}).on('fileuploaded', function(event, data, previewId, index) {
+
+			var imgval = $('#testimg').val();
+
+			if(imgval == null || imgval == "" || imgval == undefined){
+				imgval = data.response.responseText;
+			}/*else{
+			imgval += ","+"http://<%= request.getServerName()%>:<%=request.getServerPort()%><%=request.getContextPath()%>/"+data.response;
+		}*/
+			$('#testimg').val(imgval);
+		});
+	}
+
+
+</script>
+</html>

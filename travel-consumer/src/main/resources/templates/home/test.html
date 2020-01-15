@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>XXX首页界面</title>
+
+    <link href="../stylee/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link rel="stylesheet" type="text/css" href="../stylee/css/common.css">-->
+    <link rel="stylesheet" type="text/css" href="../stylee/css/index.css">
+
+<!--    <script src="../stylee/js/jquery-3.3.1.js"></script>-->
+<!--    <script src="../stylee/js/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="../stylee/js/include.js"></script>
+
+
+
+
+
+
+
+    <!-- 引入jquery -->
+    <script type="text/javascript" src="../js3/jquery-1.9.1.min.js"></script>
+    <!-- 引入bootstrap的css、js -->
+    <link rel="stylesheet" href="../js3/bootstrap3/css/bootstrap.css">
+    <script type="text/javascript" src="../js3/bootstrap3/js/bootstrap.js"></script>
+    <!-- 引入tree的js、css -->
+    <link rel="stylesheet" href="../js3/bootstrap-treeview/bootstrap-treeview.min.css">
+    <script type="text/javascript" src="../js3/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <!-- 引入选项卡的js、css -->
+    <link rel="stylesheet" href="../js3/bootStrap-addTabs/bootstrap.addtabs.css">
+    <script type="text/javascript" src="../js3/bootStrap-addTabs/bootstrap.addtabs.min.js"></script>
+    <!-- 引入table的css、js -->
+    <link rel="stylesheet" href="../js3/bootstrap-table/bootstrap-table.css">
+    <script type="text/javascript" src="../js3/bootstrap-table/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../js3/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <!-- 引入删除提示框 -->
+    <script type="text/javascript" src="../js3/bootbox/bootbox.min.js"></script>
+    <!-- 引入时间的css、js -->
+    <link rel="stylesheet" href="../js3/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+    <script  src="../js3/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script  src="../js3/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <!-- 引入文件上传的css、js -->
+    <link rel="stylesheet" href="../js3/bootstrap-fileinput/css/fileinput.css">
+    <script type="text/javascript" src="../js3/bootstrap-fileinput/js/fileinput.js"></script>
+    <script type="text/javascript" src="../js3/bootstrap-fileinput/js/locales/zh.js"></script>
+
+    <style>
+        *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">成都旅行社</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="../login/toTest">首页</a>
+                        </li>
+                        <li>
+                            <a href="../travel/toMuDD">目的地</a>
+                        </li>
+                        <li>
+                            <a href="#">当地游</a>
+                        </li>
+                        <li>
+                            <a href="#">国内旅游</a>
+                        </li>
+                        <li>
+                            <a href="#">旅游攻略</a>
+                        </li>
+                        <li>
+                            <a href="#">景点门票</a>
+                        </li>
+                        <li>
+                            <a href="#">定制行程</a>
+                        </li>
+                        <li>
+                            <a href="#">旅游新闻</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                              <span id="myUser"></span>
+<!--                                <a href="../login/toIndex">会员登录</a>-->
+                        </li>
+                        <li>
+                            <a href="../login/toRegister" >免费注册</a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">查看个人信息</a>
+                                </li>
+                                <li>
+                                    <a href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Something else here</a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="#">Separated link</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            <div class="row clearfix">
+                <div class="col-md-6 column">
+                    <img src="../potol/logo.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 column">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group" style="margin-left: 20px">
+                        <input class="form-control col-30 " id="searchJindDian" name="jdName" type="text" placeholder="输入目的地名称或线路关键词" style="width: 200px"/>
+                    </div>
+                    <button class="btn btn-default btn-info glyphicon glyphicon-search" type="submit"></button>
+                </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-8 column">
+            <div class="carousel slide" id="carousel-462404">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-462404" data-slide-to="0">
+                    </li>
+                    <li class="active" data-target="#carousel-462404" data-slide-to="1">
+                    </li>
+                    <li data-target="#carousel-462404" data-slide-to="2">
+                    </li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item">
+                        <img alt="" src="../potol/CoUBGV4XAHCAeOjcACGuP4t9XTs619.png" />
+                        <div class="carousel-caption">
+                            <h4>
+                                Popular places to visit
+                            </h4>
+
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <img alt="" src="../potol/CoUBGV4QnLCABIdGACBdnolCv4I426.png" />
+                        <div class="carousel-caption">
+                            <h4>
+                                Popular places to visit
+                            </h4>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img alt="" src="../potol/CoUBGV4UPy2AC004ACOx5HrFhoA155.png" />
+                        <div class="carousel-caption">
+                            <h4>
+                                Popular places to visit
+                            </h4>
+
+                        </div>
+                    </div>
+                </div> <a class="left carousel-control" href="#carousel-462404" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-462404" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <div class="col-md-4 column">
+
+
+                <div class="notice">
+                    <dl>
+                        <i class="glyphicon glyphicon-signal" aria-hidden="true"> 网站公告</i> <br>
+                        <dd><b>【公告】</b><a href="http://www.gosctour.com/news/237/" target="_blank" title="九寨沟景区关于部分区域恢复开放（试运行）的公告">九寨沟景区关于部分区域恢复开放（试运行）的公告</a><i></i></dd>
+                        <dd><b>【公告】</b><a href="http://www.gosctour.com/news/203/" target="_blank" title="九寨沟门票降价通告">九寨沟门票降价通告</a><i></i></dd>
+                        <dd><b>【公告】</b><a href="http://www.gosctour.com/news/202/" target="_blank" title="阿坝州新增加5个景区，实现网上预约售票功能">阿坝州新增加5个景区，实现网上预约售票功能</a><i></i></dd>
+                        <dd><b>【公告】</b><a href="http://www.gosctour.com/news/201/" target="_blank" title="4月1日起，黄龙风景名胜区对外开放！黄龙红岩关索道开启运行">4月1日起，黄龙风景名胜区对外开放！黄龙红岩关索道开启运行</a><i></i></dd>
+                        <dd><b>【公告】</b><a href="http://www.gosctour.com/news/200/" target="_blank" title="乐山大佛九曲栈道4月1日重新开放">乐山大佛九曲栈道4月1日重新开放</a><i></i></dd>
+                        <dd><b>【公告】</b><a href="http://www.gosctour.com/news/199/" target="_blank" title="黄龙景区参加西安 2019四川春夏文化旅游产品推介会">黄龙景区参加西安 2019四川春夏文化旅游产品推介会</a><i></i></dd>
+                    </dl>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="hemai_jx">
+    <div class="jx_top" style="margin-left: 30px">
+        <div class="jx_tit">
+<!--            <img src="images/icon_5.jpg" alt="">-->
+            <h>旅游参团精选</h>
+        </div>
+        <!-- Nav tabs -->
+        <ul class="jx_tabs" role="tablist">
+            <li role="presentation" class="active">
+                <span></span>
+                <a href="#popularity" aria-controls="popularity" name="renqi" role="tab" data-toggle="tab">绝美仙境</a>
+            </li>
+            <li role="presentation">
+                <span></span>
+                <a href="#newest" onclick="zuixin()" aria-controls="newest" role="tab" name="faBuTime" type="button"  data-toggle="tab">最新旅游</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="jx_content" style="margin-left: 30px">
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="popularity">
+                <div class="row">
+                    <a href="javascript:;">
+                        <span id="renqiLvyou"></span>
+                    </a>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="newest">
+                <div class="row">
+                    <a href="javascript:;">
+                        <span id="zuixinLvYou"></span>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="hemai_jx">
+    <div class="jx_top" style="margin-left: 30px">
+        <div class="jx_tit" >
+            <span>川内自由行精选</span>
+        </div>
+    </div>
+    <div class="heima_gn" style="margin-left: 20px">
+        <div class="guonei_l" >
+            <img src="https://kehousi.oss-cn-beijing.aliyuncs.com/lvyou/1578740171486.png" style="width: 370px;height: 340px" alt="">
+        </div>
+        <div class="guone_r" >
+            <span id="ziyouX"></span>
+        </div>
+    </div>
+</section>
+
+
+</body>
+<script>
+
+    /*绝美仙境*/
+$(function () {
+    initTravel();
+})
+    function initTravel() {
+            $.ajax({
+                url:"../travel/queryTravelList",
+                type:"post",
+                success:function (data) {
+                    var Cartable = "";
+                    for (i = 0; i < data.rows.length; i++) {
+                        Cartable +=
+                            ' <input value="'+data.rows[i].tuanYouId+'" style="display: none">' +
+                            '<div class="col-md-3">'+
+                            '<p></p>'+
+                            '<p></p>'+
+                            '<a>'+
+                            '<img src="'+data.rows[i].img1+'" style="height:180px;width:110%;display: block">'+
+                            '</a>'+
+                            '<div class="caption">'+
+                            '<h3>'+data.rows[i].tuanName+' '+
+                            '<p><font color="crimson" size="5"> ￥ '+data.rows[i].baotuanprice+ ' </font> 起 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  成都出发</p>'+
+                            '<a  href="#" class="btn btn-primary">详情</a>'+
+                            '<a   class=""></a>'+
+                            '</div>'+
+                            '</div>'
+                    }
+                    $("#renqiLvyou").html(Cartable)
+                }
+            })
+    }
+</script>
+
+
+<!--最新旅游-->
+<script>
+    zuixin = function () {
+        $.ajax({
+            url:"../travel/queryTravelListNew",
+            type:"post",
+            success:function (data) {
+                var Cartable1 = "";
+                for (i = 0; i < data.rows.length; i++) {
+                    Cartable1 +=
+                        ' <input value="'+data.rows[i].tuanYouId+'" style="display: none">' +
+                        '<div class="col-md-3">'+
+                        '<p></p>'+
+                        '<p></p>'+
+                        '<a>'+
+                        '<img src="'+data.rows[i].img1+'" style="height:180px;width:110%;display: block">'+
+                        '</a>'+
+                        '<div class="caption">'+
+                        '<h3>'+data.rows[i].tuanName+' '+
+                        '<p><font color="crimson" size="5"> ￥ '+data.rows[i].baotuanprice+ ' </font> 起 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  成都出发</p>'+
+                        '<a  href="#" class="btn btn-primary">详情</a>'+
+                        '<a   class=""></a>'+
+                        '</div>'+
+                        '</div>'
+                }
+                $("#zuixinLvYou").html(Cartable1)
+            }
+        })
+    }
+</script>
+
+
+<!--川内旅游-->
+<script>
+    $(function () {
+        initZiYouXing();
+    })
+    function initZiYouXing() {
+        $.ajax({
+            url:'../travel/queryJingDIanList',
+            type:'get',
+            success:function (data) {
+                var ziyou = "";
+                for (i = 0; i <  data.rows.length; i++) {
+                    ziyou +=
+                        '<div class="row clearfix" style="margin-right: 50px">' +
+                        '<div class="caption">' +
+                        '<div class="col-md-2">' +
+                        '<a>' +
+                        '<img src="'+data.rows[i].jdImg1+'" style="height:100px;width:100px;display: block">' +
+                        '</a>' +
+                        '</div>' +
+                        '<div class="col-md-10">' +
+                        '<p></p>' +
+                        '<p></p>' +
+                        '<h3>'+data.rows[i].jdName+'</h3>' +
+                        '<sapn> ￥ '+data.rows[i].jdPrice+' 元/人  起 &nbsp; &nbsp; &nbsp; &nbsp; '+
+                        ' &nbsp; &nbsp; &nbsp; &nbsp; '+data.rows[i].jdTeShe+' ' +
+                        '</sapn>' +
+                        '<a  href="javascript:jdXiangQing('+data.rows[i].jdId+')"  class="btn btn-primary">详情</a>' +
+                        '<a   class=""></a>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>'
+                }
+                $("#ziyouX").html(ziyou)
+
+            }
+        })
+    }
+
+
+    //景点详情
+    jdXiangQing = function (jid) {
+
+      location.href="../travel/toXiangQing?jdId="+jid;
+
+
+    }
+</script>
+
+
+
+
+<!--加载用户-->
+<script>
+    $(function () {
+        $("#myUser").ge
+    })
+</script>
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.mapper.TravelServerMapper" >
+
+    <!--查询账号是否存在-->
+    <select id="queryUserAccount" resultType="com.jk.model.UserLoginBean">
+        SELECT * from t_userlogin WHERE UserAccount = #{userAccount}
+    </select>
+
+    <!--注册-->
+    <insert id="saveZhuce">
+        insert into  t_userlogin values (null,#{userName},#{userAccount},#{userPass},null,null,#{usermailbox})
+    </insert>
+
+
+
+    <!--查询团游数据-->
+    <select id="queryTravelList" resultType="com.jk.model.TuanYouBean">
+        SELECT
+        ty.*,
+        GROUP_CONCAT(zt.zhuTiName)
+        FROM
+        t_tuanYou ty
+        LEFT JOIN t_tuan_zhu tz ON ty.youWanZhuTiId = tz.tuanId
+        LEFT JOIN t_zhuti zt ON zt.zhitiId = tz.zhuId
+        GROUP BY ty.tuanYouId
+
+        LIMIT 0,4
+    </select>
+    <!--查询团游数据-->
+    <select id="queryTravelListNew" resultType="com.jk.model.TuanYouBean">
+        SELECT
+        ty.*,
+        GROUP_CONCAT(zt.zhuTiName)
+        FROM
+        t_tuanYou ty
+        LEFT JOIN t_tuan_zhu tz ON ty.youWanZhuTiId = tz.tuanId
+        LEFT JOIN t_zhuti zt ON zt.zhitiId = tz.zhuId
+        GROUP BY ty.tuanYouId
+        order by  ty.chufaRiQi desc
+        LIMIT 0,4
+    </select>
+
+
+    <select id="queryJingDIanList" resultType="com.jk.model.JingDianBean">
+        select * from t_jd   LIMIT 0,3
+    </select>
+
+    <!--单个景点详情-->
+    <select id="toXiangQing" resultType="com.jk.model.JingDianBean">
+        select * from t_jd   where jdId = #{jdId}
+    </select>
+</mapper>
